@@ -4,7 +4,456 @@
   <a href="tlgallery.html">Gallery</a>
 </nav>
 
-<footer>
-  <p>&copy; 2026 TreeLand</p>
-  <a href="references.html">References</a>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreeLand - Enracinons un futur pour tous</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f6f0;
+            color: #2c3e2e;
+            display: flex;
+            justify-center: center;
+            align-items: center;
+            padding: 20px 0;
+            min-height: 100vh;
+        }
+
+        /* --- SMARTPHONE CONTAINER EMBED --- */
+        .phone-wrapper {
+            width: 100%;
+            max-width: 412px; /* Standard modern smartphone width */
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            border: 8px solid #1e1e1e; /* Simulating a clean device bezel */
+            position: relative;
+        }
+
+        /* --- REUSABLE UTILITIES --- */
+        .btn {
+            display: inline-block;
+            background-color: #4a7c59;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, background-color 0.2s;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #386143;
+            transform: translateY(-1px);
+        }
+
+        /* --- HEADER SECTION --- */
+        header {
+            background: linear-gradient(135deg, #2d5a27 0%, #1e3f1a 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 24px 16px 16px 16px;
+            position: relative;
+            /* Layered organic shapes decoration similar to the image */
+            border-bottom: 5px solid #689f38;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        header p {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #c8e6c9;
+            margin-bottom: 16px;
+        }
+        nav {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 12px;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 2px 4px;
+            opacity: 0.9;
+        }
+        nav ul li a:hover {
+            color: #aed581;
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 230px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+            position: relative;
+        }
+        .hero h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+            margin-bottom: 16px;
+            line-height: 1.4;
+            max-width: 90%;
+        }
+        .hero .btn {
+            background-color: #558b2f;
+            padding: 8px 20px;
+        }
+
+        /* --- CONTENT WRAPPER --- */
+        .content {
+            background-color: #f7f9f5;
+            padding: 24px 16px;
+        }
+
+        /* --- MISSION SECTION --- */
+        .mission {
+            background-color: #f1f3ec;
+            border: 1px solid #dcdfd5;
+            border-radius: 4px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+            position: relative;
+            margin-bottom: 28px;
+        }
+        /* Decorative leaves mimicking the mockups */
+        .mission::before, .mission::after {
+            content: '🍃';
+            position: absolute;
+            font-size: 1.2rem;
+            opacity: 0.3;
+        }
+        .mission::before { top: -12px; left: 10px; transform: rotate(-15deg); }
+        .mission::after { bottom: -12px; right: 10px; transform: rotate(45deg); }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 12px;
+            color: #1e3f1a;
+        }
+        .mission p {
+            font-size: 0.78rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* --- FEATURED PRODUCTS --- */
+        .products {
+            margin-bottom: 28px;
+        }
+        .product-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #eef1ea;
+        }
+        .product-card img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+        .product-card h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .product-card .btn {
+            background-color: #558b2f;
+            width: 100%;
+            max-width: 140px;
+            padding: 6px 0;
+            font-size: 0.75rem;
+        }
+
+        /* --- LOWER TWO-COLUMN BLOCK (INVEST & CONTACT) --- */
+        .lower-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* --- INVEST SECTION --- */
+        .invest {
+            background-image: linear-gradient(rgba(15, 37, 13, 0.75), rgba(15, 37, 13, 0.85)), 
+                              url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            color: #ffffff;
+            border: 2px solid #2e5a27;
+        }
+        .invest h2 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .invest p {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+        .invest .btn {
+            background-color: #689f38;
+            padding: 8px 20px;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact {
+            background-color: #eaece4;
+            border-radius: 12px;
+            padding: 20px 16px;
+            border: 1px solid #cbd0c4;
+            position: relative;
+        }
+        .contact h2 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: #2c3e2e;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #444;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid #bcbcbc;
+            border-radius: 6px;
+            padding: 8px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            color: #333;
+            outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #4a7c59;
+        }
+        .contact-btn-container {
+            text-align: center;
+            margin-top: 16px;
+        }
+        .contact .btn {
+            background-color: #4a7c59;
+            min-width: 110px;
+            padding: 8px 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1b3518;
+            color: #a5bda3;
+            text-align: center;
+            padding: 16px;
+            font-size: 0.65rem;
+            border-top: 4px solid #4a7c59;
+            letter-spacing: 0.5px;
+        }
+        @media screen and (min-width: 600px) {
+
+  .product-grid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .product-card {
+    width: 30%;
+  }
+
+  .lower-grid {
+    flex-direction: row;
+  }
+
+  .invest, .contact {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 1024px) {
+
+  .phone-wrapper {
+    max-width: 900px;
+  }
+
+  .hero {
+    height: 320px;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    gap: 20px;
+    font-size: 0.9rem;
+  }
+}
+    </style>
+</head>
+<body>
+
+    <div class="phone-wrapper">
+        
+        <header>
+            <h1>TREELAND</h1>
+            <p>Enracinons un futur pour tous</p>
+            <nav>
+                <ul>
+                    <li><a href="#">[ Home ]</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h2>Plant Trees • Create Jobs • Build Communities</h2>
+            <a href="#" class="btn">[ Learn More ]</a>
+        </section>
+
+        <div class="content">
+            
+            <section class="mission">
+                <h2 class="section-title">Our Mission</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            </section>
+
+            <section class="products">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="product-grid">
+                    
+                    <div class="product-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/628/628283.png" alt="Product 1 Image" onerror="this.src='https://placehold.co/75x75?text=Sprout'">
+                        <h3>Product 1 Image</h3>
+                        <a href="#" class="btn">[ Buy Now ]</a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081944.png" alt="Product 2 Image" onerror="this.src='https://placehold.co/75x75?text=Honey'">
+                        <h3>Product 2 Image</h3>
+                        <a href="#" class="btn">[ Buy Now ]</a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3201/3201550.png" alt="Product 3 Image" onerror="this.src='https://placehold.co/75x75?text=Basket'">
+                        <h3>Product 3 Image</h3>
+                        <a href="#" class="btn">[ Buy Now ]</a>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <div class="lower-grid">
+                
+                <section class="invest">
+                    <h2>Invest With Us</h2>
+                    <p>Photo ans the thriving commnity ot sesteinseef somountily</p>
+                    <a href="#" class="btn">[ Invest Now ]</a>
+                </section>
+
+                <section class="contact">
+                    <h2>Contact Us</h2>
+                    <form action="#" method="POST" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="3"></textarea>
+                        </div>
+                        <div class="contact-btn-container">
+                            <button type="submit" class="btn">[ Send ]</button>
+                        </div>
+                    </form>
+                </section>
+                
+            </div> </div> <footer>
+            &copy; 2026 TreeLand - All Rights Reserved <a href="references.html">References</a>
+        </footer>
+        <footer>
 </footer>
+
+    </div>
+
+</body>
+</html>
