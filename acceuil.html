@@ -68,7 +68,7 @@
   <!-- CARTES -->
   <section class="icards-container">
     <div class="card">
-      <img src="img222.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/628/628283.png" alt="Product 1 Image" onerror="this.src='https://placehold.co/75x75?text=Sprout'">
       <div class="card-content">
         <div class="title">TechFlow Solutions</div>
         <div class="description">Software development agency...</div>
@@ -76,7 +76,7 @@
     </div>
 
     <div class="card">
-      <img src="img222.png">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081944.png" alt="Product 2 Image" onerror="this.src='https://placehold.co/75x75?text=Honey'">
       <div class="card-content">
         <div class="title">TechFlow Solutions</div>
         <div class="description">Software development agency...</div>
@@ -114,11 +114,556 @@
     <a href="tlmarche.html">🛒<br>SuperMarché</a>
     <a href="tlgallery.html">🖼️<br>Gallery</a>
   </footer>
-   <footer>
-            &copy; 2026 TreeLand - All Rights Reserved <a href="references.html">References</a>
-        </footer>
+
 
 </div>
 
+</body>
+</html>
+
+
+
+
+Stp séparé les en différent fichier HTML CSS et JS : <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TreeLand</title>
+  <link rel="stylesheet" href="carde.css" />
+  <link rel="stylesheet" href="carda.css" />
+  <link rel="stylesheet" href="cardo.css" />
+  <style>
+  
+#messageInfo {
+  padding: 15px;
+  background: #0d6efd;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Animation défilement */
+#messageInfo span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: defilement 12s linear infinite;
+}
+
+@keyframes defilement {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+    * {
+      box-sizing: border-box;
+    }
+   
+
+    /* 1 — Dégradé arc‑en‑ciel animé */
+    .rainbow {
+      background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+      background-size: 1400% 1400%;
+      animation: rainbowShift 12s ease infinite;
+    }
+    @keyframes rainbowShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      text-align: center;
+      
+    }
+  
+
+    header {
+      text-align: center;
+      padding: 0px;
+      margin:0px;
+    }
+
+    header h1 {
+      color: #2563eb;
+      margin: 0px;
+      font-size: 40px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 10px;
+      color: #555;
+    }
+
+    .hero {
+      text-align: center;
+      background: linear-gradient(180deg, #2563eb, #1e40af);
+      color: white;
+      padding: 20px 20px;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      display: block;
+      width: 90%;
+      max-width: 350px;
+      margin: 10px auto;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      background: white;
+      color: #2563eb;
+      border: 1px solid #ddd;
+    }
+
+    .btn-green {
+      background: #16a34a;
+      color: white;
+    }
+
+    .search-section {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .search-section input, .search-section select {
+      width: 90%;
+      max-width: 350px;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .featured {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .featured h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #111;
+    }
+
+    .featured p {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #666;
+    }
+    section {
+  margin: 20px 0; /* espace vertical avant et après chaque section */
+  }
+
+    /* Cartes business */
+    .card-content {
+  text-align: left;
+    }
+
+   
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      border:1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 0px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 8px 8px 0px 0px;
+    }
+
+    .card h4 {
+      margin: 8px 0 4px;
+      font-size: 14px;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: #555;
+      margin: 0;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      background: white;
+      border-top: 1px solid #ddd;
+      padding: 8px 0;
+    }
+
+    footer a {
+      text-align: center;
+      font-size: 14px;
+      text-decoration: none;
+      color: #666;
+    }
+
+    footer a.active {
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+        .oproducts {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .oproduct-card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      border:2px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: px;
+      width: 110px;
+      text-align: left;
+    }
+
+    .oproduct-card img {
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+    .oproduct-name {
+      font-weight: bold;
+      margin-top: 10px;
+      text-align:center;
+    }
+
+    .oproduct-price {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 16px;
+      margin:5px;
+    }
+
+    .oproduct-condition {
+      color: #888;
+      font-size: 14px;
+      margin:5px;
+    }
+
+    .oview-button {
+      margin-top: 30px;
+    }
+
+    .oview-button a {
+      text-decoration: none;
+      border: 1px solid #007bff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .oview-button a:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="section rainbow">
+
+  <header>
+    <h1><strong>TreeLand</strong></h1>
+    <p>Connectez-vous • Investissez • Développez-vous. »</p>
+  </header>
+
+  <section class="hero">
+    <h2>Connectez-vous aux entreprises locales <br> avec des investisseurs intelligents</h2>
+    <p>Découvrez des entreprises locales prometteuses et des projets communautaires. Investissez dans la croissance de votre communauté</p>
+    <button class="btn-outline">🔍 Find Opportunities</button>
+    <button class="btn-green">+ List Your Business</button>
+  </section>
+
+  <section class="search-section">
+    <input type="text" placeholder="Search businesses or projects...">
+    <br>
+    <select>
+      <option>All Categories</option>
+      <option>Technology</option>
+      <option>Agriculture</option>
+      <option>Retail</option>
+    </select>
+    <br>
+    <select>
+      <option>All Locations</option>
+      <option>Abidjan</option>
+      <option>Grand-Bassam</option>
+      <option>Yamoussoukro</option>
+    </select>
+  </section>
+  <div id="messageInfo"></div>
+  <script>
+function afficherMessageLundi() {
+  const messageBox = document.getElementById("messageInfo");
+
+  const messages = [
+    "Bienvenue sur TreeLand 🌱 - Nouvelle semaine, nouvelles opportunités !",
+    "Cette semaine : découvrez les nouveaux projets disponibles 💼",
+    "Info importante : amélioration de la plateforme en cours ⚙️",
+    "Promotion spéciale investisseurs actifs 💰",
+    "Mise à jour de sécurité et performance 🚀"
+  ];
+
+  const semaine = Math.floor(new Date().getTime() / (7 * 24 * 60 * 60 * 1000));
+  const message = messages[semaine % messages.length];
+
+  // texte défilant
+  messageBox.innerHTML = "<span>📢 " + message + "</span>";
+}
+
+afficherMessageLundi();
+</script>
+  <section class="stars">
+    <h3>Entreprises locales en vedette</h3>
+    <p>Découvrez des entreprises locales établies à la recherche d’investissements</p>
+  </section>
+
+  <!-- Cartes d’exemple -->
+    <section class="icards-container">
+      <!-- Cartes ici -->
+      <div class="card">
+        <img src="img222.png" alt="Team working on laptops">
+        <div class="card-content">
+          <div class="tag">Technology</div>
+          <div class="rating"><i>★</i> 4.9 (89)</div>
+
+          <div class="title">TechFlow Solutions</div>
+
+          <div class="description">
+            Software development agency scaling to serve enterprise clients. Need capital for team expansion.
+          </div>
+
+          <div class="location">
+            <i>📍</i> Tech District
+          </div>
+
+          <div class="ofooter">
+            <div class="seeking">Seeking: <span>$120,000</span></div>
+            <button class="contact-btn">Contact</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2eme carte -->
+      <div class="card">
+        <img src="img222.png" alt="Team working on laptops">
+
+        <div class="card-content">
+          <div class="tag">Technology</div>
+          <div class="rating"><i>★</i> 4.9 (89)</div>
+
+          <div class="title">TechFlow Solutions</div>
+
+          <div class="description">
+            Software development agency scaling to serve enterprise clients. Need capital for team expansion.
+          </div>
+
+          <div class="location">
+            <i>📍</i> Tech District
+          </div>
+
+          <div class="ofooter">
+            <div class="seeking">Seeking: <span>$120,000</span></div>
+            <button class="contact-btn">Contact</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="ecard-wrapper">
+        <div class="acard">
+          <img class="acard-img" src="img222.png" alt="Community Garden Initiative">
+
+          <div class="acard-body">
+            <div class="acard-top">
+              <span class="acard-tag">Environment</span>
+              <span class="acard-funded">68% funded</span>
+            </div>
+
+            <h3 class="acard-title">Community Garden Initiative</h3>
+            <p class="acard-description">
+              Transform vacant lot into community garden providing fresh produce and educational programs for local families.
+            </p>
+
+            <div class="acard-location">
+              <span class="acard-location-icon">📍</span>
+              <span class="acard-location-text">Riverside Neighborhood</span>
+            </div>
+
+            <div class="acard-stats">
+              <span class="acard-raised">Raised: <span class="green">$13,600</span></span>
+              <span class="acard-goal">Goal: <strong>$20,000</strong></span>
+            </div>
+
+            <div class="acard-progress-bar">
+              <div class="ecard-progress" style="width: 68%;"></div>
+            </div>
+
+            <button class="acard-btn">Support This Project</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="icards-container">
+      <!-- Carte 1 -->
+      <div class="icard">
+        <div class="icard-image-container">
+          <img src="img222.png" alt="Volunteer" />
+          <div class="ibadges">
+            <div class="ibadge">Education</div>
+            <div class="ibadge green">Project</div>
+          </div>
+        </div>
+        <div class="icard-body">
+          <h3>Youth Skills Workshop</h3>
+          <div class="ilocation">Central Community Center</div>
+          <div class="idescription">After-school program teaching digital skills...</div>
+          <div class="iprogress-label">Progress:</div>
+          <div class="iprogress-bar">
+            <div class="iprogress-bar-fill"></div>
+          </div>
+          <div class="iprogress-text">42%</div>
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="icard">
+        <div class="icard-image-container">
+          <img src="img222.png" alt="Volunteer" />
+          <div class="ibadges">
+            <div class="ibadge">Education</div>
+            <div class="ibadge green">Workshop</div>
+          </div>
+        </div>
+        <div class="icard-body">
+          <h3>Digital Camp</h3>
+          <div class="ilocation">West Side Center</div>
+          <div class="idescription">Summer camp focused on design and coding...</div>
+          <div class="iprogress-label">Progress:</div>
+          <div class="iprogress-bar">
+            <div class="iprogress-bar-fill" style="width: 65%;"></div>
+          </div>
+          <div class="iprogress-text">65%</div>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="icard">
+        <div class="icard-image-container">
+          <img src="img222.png" alt="Volunteer" />
+          <div class="ibadges">
+            <div class="ibadge">Education</div>
+            <div class="ibadge green">Project</div>
+          </div>
+        </div>
+        <div class="icard-body">
+          <h3>Youth Skills Workshop</h3>
+          <div class="ilocation">Central Community Center</div>
+          <div class="idescription">After-school program teaching digital skills...</div>
+          <div class="iprogress-label">Progress:</div>
+          <div class="iprogress-bar">
+            <div class="iprogress-bar-fill"></div>
+          </div>
+          <div class="iprogress-text">42%</div>
+        </div>
+      </div>
+    </section>
+      <div class="oview-button">
+    <a href="#">View All Businesses</a>
+  </div>
+  <section>
+ <h2 class:"stars">Produits en vedette</h2>
+  <p>Achetez des articles près de chez vous</p>
+
+  <div class="oproducts">
+    <div class="oproduct-card">
+      <img src="img223.jpg" alt="iPhone 14 Pro">
+      <div class="oproduct-name">iPhone 14 Pro</div>
+      <div class="oproduct-price">$899</div>
+      <div class="oproduct-condition">Used</div>
+    </div>
+
+    <div class="oproduct-card">
+      <img src="img-222.jpg" alt="Leather Jacket">
+      <div class="oproduct-name">Leather Jacket</div>
+      <div class="oproduct-price">$120</div>
+      <div class="oproduct-condition">Used</div>
+    </div>
+
+    <div class="oproduct-card">
+      <img src="img-221.jpg" alt="Gaming Chair">
+      <div class="oproduct-name">Gaming Chair</div>
+      <div class="oproduct-price">$180</div>
+      <div class="oproduct-condition">New</div>
+    </div>
+  </div>
+
+  <div class="oview-button">
+    <a href="#">View All Products</a>
+  </div>
+  </br>
+  </br>
+  </br>
+  </section>
+  <footer>
+    <a href="acceuil.html" class="active">🏠<br>Acceuil</a>
+    <a href="tlmarché.html">🛒<br>SuperMarché</a>
+    <a href="tlgallery.html">🖼️<br>Gallery</a>
+  </footer>
+</div>
 </body>
 </html>
