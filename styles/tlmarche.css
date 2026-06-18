@@ -1,0 +1,92 @@
+/* 🌈 Fond animé */
+.rainbow {
+  background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 1400% 1400%;
+  animation: rainbowShift 60s ease infinite;
+}
+
+@keyframes rainbowShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* HEADER */
+.navbar {
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+
+/* SEARCH */
+.search-bar input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 8px;
+  border: none;
+}
+
+/* CATEGORIES */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.category {
+  padding: 8px 12px;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.active-category {
+  background: #2563eb;
+  color: white;
+}
+
+/* PRODUITS */
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.product {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.price {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
+
+.bottom-nav a {
+  text-decoration: none;
+  color: #555;
+}

@@ -4,155 +4,41 @@
   <meta charset="UTF-8" />
   <title>TreeLand - Marché</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="tlmarche.css" />
-  <style>
-  
-        /* 1 — Dégradé arc‑en‑ciel animé */
-    .rainbow {
-      background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
-      background-size: 1400% 1400%;
-      animation: rainbowShift 60s ease infinite;
-    }
-    @keyframes rainbowShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-  </style>
+
+  <link rel="stylesheet" href="tlmarché.css" />
+  <script src="tlmarché.js" defer></script>
 </head>
+
 <body class="rainbow">
 
-  <header>
-    <div class="navbar">
-      <h1><strong>🛒 ____ SuperMarché ____ 🛍</strong></h1>
-    </div>
-  </header>
-  
-<nav>
-  <a href="accueil.html">Accueil</a>
-  <a href="tlmarche.html">Marché</a>
-  <a href="tlgallery.html">Gallery</a>
-</nav>
-  <div class="main-content">
-    <div class="search-bar">
-      <input type="text" placeholder="Rechercher...">
-    </div>
+<header>
+  <div class="navbar">
+    <h1><strong>🛒 SuperMarché 🛍</strong></h1>
+  </div>
+</header>
 
-    <div class="categories">
-      <div class="category active-category" data-cat="tout">Tout</div>
-      <div class="category" data-cat="Fruits">Fruits</div>
-      <div class="category" data-cat="Légumes">Légumes</div>
-      <div class="category" data-cat="Viande">Viande</div>
-    </div>
+<div class="main-content">
 
-    <section class="products" id="marketProducts">
-      <!-- Produits approuvés -->
-    </section>
+  <div class="search-bar">
+    <input type="text" placeholder="Rechercher...">
   </div>
 
-  
-  <nav class="bottom-nav">
-    <a href="accueil.html">🏠<br>Accueil</a>
-    <a href="panier.html">🛒<br>Panier</a>
-    <a href="profile.html">👤<br>Profile</a>
-  </nav>
-  
+  <div class="categories">
+    <div class="category active-category" data-cat="tout">Tout</div>
+    <div class="category" data-cat="Fruits">Fruits</div>
+    <div class="category" data-cat="Légumes">Légumes</div>
+    <div class="category" data-cat="Viande">Viande</div>
+  </div>
 
-<script>
-  const produits = JSON.parse(localStorage.getItem("produitsTreeLand") || "[]");
-  const container = document.getElementById("marketProducts");
-  const categories = document.querySelectorAll(".category");
+  <section class="products" id="marketProducts"></section>
 
-  function afficherProduits(categorie) {
-    container.innerHTML = "";
-    let count = 0;
+</div>
 
-    produits.forEach(p => {
-      if (p.approuve === true && (categorie === "tout" || p.categorie === categorie)) {
-        count++;
-        const card = document.createElement("div");
-        card.className = "product";
-        card.dataset.id = p.id;
-        card.innerHTML = `
-          <img src="${p.image}" alt="${p.nom}" />
-          <p class="price">F CFA ${p.prix}</p>
-          <p class="product-name">${p.nom}</p>
-          <button>Ajouter au panier</button>
-        `;
-        container.appendChild(card);
-      }
-    });
-
-    if (count === 0) {
-      container.innerHTML = "<p>Aucun produit trouvé pour cette catégorie.</p>";
-    }
-  }
-
-  // Clic sur une catégorie
-  categories.forEach(cat => {
-    cat.addEventListener("click", () => {
-      categories.forEach(c => c.classList.remove("active-category"));
-      cat.classList.add("active-category");
-      afficherProduits(cat.dataset.cat);
-    });
-  });
-
-  function getPanier() {
-    return JSON.parse(localStorage.getItem("panierTreeLand") || "[]");
-  }
-
-  function setPanier(panier) {
-    localStorage.setItem("panierTreeLand", JSON.stringify(panier));
-  }
-
-  function ajouterAuPanier(produit) {
-    let panier = getPanier();
-    const index = panier.findIndex(item => item.id === produit.id);
-    if (index !== -1) {
-      panier[index].quantite++;
-    } else {
-      panier.push({ ...produit, quantite: 1 });
-    }
-    setPanier(panier);
-    alert(`"${produit.nom}" a été ajouté au panier.`);
-  }
-
-  // Ajout au panier
-  container.addEventListener('click', event => {
-    if (event.target.tagName === 'BUTTON') {
-      const card = event.target.closest('.product');
-      if (!card) return;
-      const produit = {
-        id: card.dataset.id,
-        nom: card.querySelector('.product-name').textContent,
-        prix: parseFloat(card.querySelector('.price').textContent.replace('F CFA ', '').trim()),
-        image: card.querySelector('img').src
-      };
-      ajouterAuPanier(produit);
-    }
-  });
-
-  // Zoom sur image
-  document.addEventListener("click", e => {
-    if (e.target.tagName === "IMG" && e.target.closest(".product")) {
-      document.querySelectorAll(".product img").forEach(img => {
-        if (img !== e.target) img.classList.remove("zoomed");
-      });
-      e.target.classList.toggle("zoomed");
-    }
-  });
-
-  // Afficher tous les produits au démarrage
-  afficherProduits("tout");
-</script>
-</br>
-</br>
-<footer>
-  <p>&copy; 2026 TreeLand</p>
-  <a href="references.html">References</a>
-</footer>
-
+<nav class="bottom-nav">
+  <a href="acceuil.html">🏠<br>Accueil</a>
+  <a href="panier.html">🛒<br>Panier</a>
+  <a href="profile.html">👤<br>Profile</a>
+</nav>
 
 </body>
 </html>
